@@ -20,7 +20,7 @@ public class CatmullRomCurve
         this.splines = splines;
     }
 
-    public float Calc(float t){
+    public PositionAndVelocity<float, float> Calc(float t){
         int index = Mathf.FloorToInt(t * splines.Count);
         float t_in_spline = t * splines.Count % 1;
         return splines[index].Calc(t_in_spline);

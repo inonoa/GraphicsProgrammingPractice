@@ -6,8 +6,11 @@ using UnityEngine;
 public class Spline
 {
     readonly float a, b, c, d;
-    public float Calc(float t){
-        return a * t*t*t + b * t*t + c * t + d;
+    public PositionAndVelocity<float, float> Calc(float t){
+        return new PositionAndVelocity<float, float>(
+            a * t*t*t +     b * t*t +     c * t + d,
+                        3 * a * t*t + 2 * b * t + c
+        );
     }
 
     public Spline(float p0, float p1, float v0, float v1){
