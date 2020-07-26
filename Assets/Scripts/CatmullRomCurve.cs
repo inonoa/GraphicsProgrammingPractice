@@ -21,8 +21,14 @@ public class CatmullRomCurve
     }
 
     public PositionAndVelocity<float, float> Calc(float t){
-        int index = Mathf.FloorToInt(t * splines.Count);
-        float t_in_spline = t * splines.Count % 1;
+        int index = t < 1 ? Mathf.FloorToInt(t * splines.Count) : splines.Count - 1;
+        float t_in_spline = t < 1 ? t * splines.Count % 1 : 1;
         return splines[index].Calc(t_in_spline);
+    }
+
+    public float CalcSecondDerivative(float t){
+        int index = t < 1 ? Mathf.FloorToInt(t * splines.Count) : splines.Count - 1;
+        float t_in_spline = t < 1 ? t * splines.Count % 1 : 1;
+        return splines[index].CalcSecondDerivative(t_in_spline);
     }
 }

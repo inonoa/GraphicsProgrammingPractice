@@ -13,6 +13,10 @@ public class Spline
         );
     }
 
+    public float CalcSecondDerivative(float t){
+        return 6 * a * t + 2 * b;
+    }
+
     public Spline(float p0, float p1, float v0, float v1){
         a =  2 * p0 - 2 * p1 +     v0 + v1;
         b = -3 * p0 + 3 * p1 - 2 * v0 - v1;
