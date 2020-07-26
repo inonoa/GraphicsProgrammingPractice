@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 1130214812}
   - component: {fileID: 1130214811}
   m_Layer: 0
-  m_Name: MeshGenerator
+  m_Name: MeshApplyer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

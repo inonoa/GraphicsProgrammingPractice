@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
-public class MeshGenerator : SerializedMonoBehaviour
+public class MeshApplier : SerializedMonoBehaviour
 {
     [SerializeField] MeshFilter meshFilterPrefab;
     [SerializeField] IGenerateMesh generateMesh;
