@@ -5,13 +5,12 @@ using UnityEngine;
 
 public class MeshGenerator : MonoBehaviour
 {
+    [SerializeField] MeshFilter meshFilterPrefab;
 
     void Start()
     {
-        GameObject quad = new GameObject("Quad");
-        MeshFilter meshFilter = quad.AddComponent<MeshFilter>();
+        MeshFilter meshFilter = Instantiate(meshFilterPrefab);
         meshFilter.mesh = GenerateQuad();
-        quad.AddComponent<MeshRenderer>();
     }
 
     Mesh GenerateQuad(){
@@ -25,11 +24,11 @@ public class MeshGenerator : MonoBehaviour
             new Vector3(1, -1)
         };
 
-        Color[] colors = new Color[]{
-            new Color(0,1,1,1),
-            new Color(1,1,1,1),
-            new Color(0,0,1,1),
-            new Color(1,0,1,1)
+        Vector2[] uvs = new Vector2[]{
+            new Vector2(0, 0),
+            new Vector2(1, 0),
+            new Vector2(1, 1),
+            new Vector2(0, 1)
         };
 
         Vector3[] normals = new Vector3[]{
@@ -45,7 +44,7 @@ public class MeshGenerator : MonoBehaviour
         };
 
         mesh.vertices = verts;
-        mesh.colors = colors;
+        mesh.uv = uvs;
         mesh.normals = normals;
         mesh.triangles = triangles;
 

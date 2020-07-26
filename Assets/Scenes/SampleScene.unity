@@ -325,6 +325,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65f380c1bf1e6544f999064c10dbe1cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meshFilterPrefab: {fileID: 1445574155125462582, guid: 18ea83fb13cfb884bb40377209948557,
+    type: 3}
 --- !u!4 &1130214812
 Transform:
   m_ObjectHideFlags: 0
